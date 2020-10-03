@@ -2,7 +2,7 @@
   "name": "meetups-gallery-vr",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,11 +11,18 @@
   "author": "@AngelFQC",
   "license": "GPL v3",
   "devDependencies": {
-    "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "aframe": "^0.8.2",
-    "aframe-layout-component": "^5.3.0"
-  }
+    "aframe": "^1.0.4",
+    "aframe-extras": "^6.1.1",
+    "aframe-layout-component": "^5.3.0",
+    "aframe-physics-system": "^4.0.1"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:AngelFQC/meetups-mozpe.git"
 }

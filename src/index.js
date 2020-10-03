@@ -1,5 +1,7 @@
-require('aframe');
-require('aframe-layout-component');
+import 'aframe';
+import 'aframe-physics-system/dist/aframe-physics-system';
+import 'aframe-extras';
+import 'aframe-layout-component';
 
 AFRAME.registerComponent('set-image', {
     schema: {

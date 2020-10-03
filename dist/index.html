@@ -1,36 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Meetups | Mozilla Perú</title>
+    <title>Meetups Gallery VR | Mozilla Perú</title>
     <script src="main.js"></script>
 </head>
 <body>
     <a-scene>
-        <a-entity position="0 1.7 2">
-            <a-camera position="0 0 0">
+        <a-assets>
+            <img src="https://aframe.io/sample-assets/assets/images/wood/hardwood2_bump.jpg" id="wall-texture">
+        </a-assets>
+
+        <a-plane position="0 0 -1" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" shadow static-body></a-plane>
+
+        <a-entity id="cameraman" movement-controls kinematic-body>
+            <a-entity camera position="0 1.6 0" look-controls="pointerLockEnabled: true">
                 <a-cursor id="cursor" material="color: #3eb34f;">
-                    <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards"
-                                from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
-                    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale"
-                                 from="1 1 1" to="0.1 0.1 0.1" dur="500"></a-animation>
+                    <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                    <a-animation begin="cursor-fusing" easing="ease-in" attribute="scale" from="1 1 1" to="0.1 0.1 0.1" dur="500"></a-animation>
                 </a-cursor>
-            </a-camera>
+            </a-entity>
         </a-entity>
 
-        <a-box position="0 2.5 0" depth="10" height="5" width="10" material="color: red; side: back;"></a-box>
+        <a-plane position="-5 3 -1" height="6" width="10" rotation="0 90 0" static-body src="#wall-texture"></a-plane>
+        <a-plane position="5 3 -1" height="6" width="10" rotation="0 -90 0" static-body src="#wall-texture"></a-plane>
+        <a-plane position="0 3 -6" height="6" width="10" rotation="0 0 0" static-body src="#wall-texture"></a-plane>
+        <a-plane position="0 3 4" height="6" width="10" rotation="0 180 0" static-body src="#wall-texture"></a-plane>
+        <a-plane position="0 6 -1" height="10" width="10" rotation="90 0 0" static-body src="#wall-texture"></a-plane>
 
-        <a-image id="canvas" position="0 2.25 -3" width="6" height="4.5"></a-image>
+        <a-image id="canvas" position="0 2.25 -4" width="6" height="4.5" static-body></a-image>
 
-        <a-entity light="color:#fff; type:spot; angle:180; decay:1.5; castShadow:true; distance:30;"
-                position="0 4 0" rotation="-90 0 0"></a-entity>
-
-        <a-box material="color:#AAA" width="2" height="1.5" depth="0.1" position="-1 0.4 1" rotation="-90 30 0">
+        <a-box material="color:#AAA" width="2" height="1.5" depth="0.1" position="-1 1 -1" rotation="-74 10 0">
             <a-entity id="images" layout="type: box; align: center; columns: 4; marginRow: 0.325; marginColumn: 0.4;" position="0 0 0.1"
                     mozpe-gallery="apiKey: ae1c50783922d7382e92312e184db57c; searchTag: mozpe1810; userId: 108080155@N06; target: #canvas">
             </a-entity>
+            <a-entity light="color:#fff; type:spot; angle:180; decay:1.5; castShadow:true; distance:30;" position="0 0 1"></a-entity>
         </a-box>
 
         <a-sky color="#EEE"></a-sky>
