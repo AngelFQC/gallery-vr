@@ -1,2 +1,4 @@
-# meetups-mozpe
-Galería VR de los meetups de @mozillaperu
+# Gallery VR
+
+![https://angelfqc.online/gallery-vr/gallery-vr.png](https://angelfqc.online/gallery-vr/gallery-vr.png)
+
